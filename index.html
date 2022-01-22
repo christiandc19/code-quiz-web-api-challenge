@@ -15,23 +15,30 @@
 <!--NAV HEADER (High Scores and Timer)-->
     <nav class="navbar navbar-dark bg-dark text-light">
         <div class="container" id="questons-container">
-          <p class="navbar-brand" id="high-scores">View High Scores</p>
+          <a class="navbar-brand" id="high-scores" href="#">View High Scores</a>       
           <p class="navbar-brand">Timer: <span id="timer">60</span></p>
         </div>
       </nav>
 
 <!--INTRO-->
-<div class=" container w-50 vh-50 text-sm-center border border-dark mt-5 rounded">
+<div class=" container w-75 vh-50 text-sm-center border border-dark mt-5 rounded">
     <div class="mainBox mb-5">
-      <h5 class="m-5">CODING QUIZ CHALLENGE</h5>
+      <h5 class="m-5" id="intro-header">CODING QUIZ CHALLENGE</h5>
       <p class="container " id="questions-here">Try to answer the following code-related questions within the time limit. Keep in mins that incorrect answers will penalize your score/time by 10 seconds.</p>
       <h4 id="new-question"></h4>
     </div>
   </div>
 <div class="text-center">
+  
   <button class="btn btn-primary m-5" id="start-button" type="submit">Start</button>
+
+  <div class="tex-sm-center mt-3">
+    <h4 id="result"></h4>
+  </div>
+
   <button class="btn btn-primary m-5 noShow" id="next-button" type="submit">Next</button>
-</div>>
+</div>
+
 <!-- QUESTIONS
       <div class="container w-50 vh-50 text-sm-center border border-dark mt-5 rounded">
         <div class="mb-5">
