@@ -20,25 +20,40 @@
         </div>
       </nav>
 
+
 <!--INTRO-->
-<div class=" container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
+
+<section id="main-container1">
+  <div class="container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
     <div class="mainBox mb-5">
       <h1 class="m-5 text-info" id="intro-header">CODING QUIZ CHALLENGE</h1>
       <h4 class="container mb-5 text-success" id="questions-here">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds.</h4>
     </div>
   </div>
-<div class="text-center">
-  
-  <button class="btn btn-primary m-5" id="start-button" type="submit">Start</button>
 
-  <div class="tex-sm-center mt-3">
-    <h4 id="result"></h4>
+  <div class="text-center">
+    <button class="btn btn-primary m-5" id="start-button" type="submit">Start</button>
+      <div class="tex-sm-center mt-3">
+        <h4 id="result"></h4>
+      </div>
   </div>
-</div>
+</section>
 
+<section class="noShow" id="main-container2">
+  <div class="container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
+    <p class="m-3 d-inline">Type your initials</p>
+    <input class="m-3 ml-3 mt-3 d-inline initial" id ="initials"></input>
+    <button class="m-3 px-3 mt-2 btn-primary mx-3 submit-score" id="submit-score-btn">Submit</button>
+  </div>
+</section>
 
-
-
+<section class="noShow" id="main-container3">
+  <div class="container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
+    <input class="ml-3 mt-3 d-inline initial" id ="display-initials"></input>
+    <button class="px-3 mt-2 m-3 btn-primary mx-3 submit-score" id="go-back-btn">Go Back</button>
+    <button class="px-3 mt-2 m-3 btn-primary mx-3 submit-score" id="clear-score-btn">Clear High Scores</button>
+  </div>
+</section>
 
 
 <!-- QUESTIONS

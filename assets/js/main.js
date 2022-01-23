@@ -1,7 +1,8 @@
 var startButton = document.getElementById("start-button");
 var questionHere = document.getElementById("questions-here");
 var nextButton = document.getElementById("next-button");
-var highScores = document.getElementById("submit-score-btn");
+var submitButton = document.getElementById("submit-score-btn");
+var initialEl = document.getElementById("initials");
 
 
 // ARRAY OF QUESTIONS
@@ -146,28 +147,36 @@ var fifthQuestion = function() {
 }  
 
 function allDone() {
-  questionHere.remove();
-  
-  $(".result").remove(); // <h4> where the result of the choice is being displayed.
-  $('.answer').remove(); // Buttons of the previous questions is removed.
-  $("#intro-header").html("<h4 class='text-success'>All Done!</h4>");
-  $("#intro-header").append("Your Final Score is: " + timeLeft);
 
-  $("#intro-header").append("<br>");
-  $("#intro-header").append("<p class='mx-3 text-success d-inline'>Enter Your Initials</p>");
-  $("#intro-header").append("<input class='ml-3 mt-3 d-inline initial'></input>");
-  $("#intro-header").append("<button class='px-3 mt-2 btn-primary mx-3' id='submit-score-btn'>Submit</button>");
-  var inputName = document.getElementById("initial").value;
-  $("#result").html(inputName);
+  var container1 = document.getElementById("main-container1");
+   container1.classList.add("noShow");
+
+   var container2 = document.getElementById("main-container2");
+   container2.classList.remove("noShow");
+  //questionHere.remove();
+  
+  // $(".result").remove(); // <h4> where the result of the choice is being displayed.
+  // $('.answer').remove(); // Buttons of the previous questions is removed.
+  // $("#intro-header").html("<h4 class='text-success'>All Done!</h4>");
+  // $("#intro-header").append("Your Final Score is: " + timeLeft);
+  // $("#intro-header").append(main-container2);
+
+  // $("#main-container2").classList.remove("noShow");
+  // $("#intro-header").append("<br>");
+  // $("#intro-header").append("<p class='mx-3 text-success d-inline'>Enter Your Initials</p>");
+  // $("#intro-header").append("<input class='ml-3 mt-3 d-inline initial'></input>");
+  // $("#intro-header").append("<button class='px-3 mt-2 btn-primary mx-3 submit-score'>Submit</button>");
+  // $("#result").html(inputName);
 
 }
 
-function gameOver() {
+function submitScore() {
+  var initial = initialEl.value;
+  console.log(initial);
 }
 
   startButton.addEventListener("click", countdown);
-  highScores.addEventListener("click", allDone);
-
+  submitButton.addEventListener("click", submitScore);
 
 
 
