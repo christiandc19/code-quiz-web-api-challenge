@@ -1,9 +1,11 @@
 var startButton = document.getElementById("start-button");
 var questionHere = document.getElementById("questions-here");
 var nextButton = document.getElementById("next-button");
-var submitButton = document.getElementById("submit-score-btn");
-var initialEl = document.getElementById("initials");
-
+var submitButton = document.getElementById("submit-score-btn"); //button
+var initialEl = document.getElementById("initials"); //input form
+var initialText =document.getElementById("display-initials"); //text
+var scoreHereText = document.getElementById("score-here"); //text
+var home = document.getElementById("go-back-btn");
 
 // ARRAY OF QUESTIONS
 var questions = [
@@ -31,7 +33,8 @@ function countdown() {
 // FIRST QUESTION
   var firstQuestion = function() {
       questionHere.innerHTML = questions[0];
-      startButton.remove();
+      startButton.classList.add("noShow");
+
       
       $(".mainBox").append("<button class='border border-dark btn btn-info btn btn-info btn-lg btn-block w-50 m-2 answer' data-task='0'>A. * </button>");
       $(".mainBox").append("<button class='border border-dark btn btn-info btn btn-info btn-lg btn-block w-50 m-2 answer' data-task='1'>B. X </button>");
@@ -49,7 +52,6 @@ function countdown() {
               secondQuestion();
             });
   }
-
 
 // SECOND QUESTION
   var secondQuestion = function() {
@@ -147,162 +149,38 @@ var fifthQuestion = function() {
 }  
 
 function allDone() {
+    $('#timer').remove();
+    var container1 = document.getElementById("main-container1");
+        container1.classList.add("noShow");
+    var container2 = document.getElementById("main-container2");
+        container2.classList.remove("noShow");
 
-  var container1 = document.getElementById("main-container1");
-   container1.classList.add("noShow");
-
-   var container2 = document.getElementById("main-container2");
-   container2.classList.remove("noShow");
-  //questionHere.remove();
-  
-  // $(".result").remove(); // <h4> where the result of the choice is being displayed.
-  // $('.answer').remove(); // Buttons of the previous questions is removed.
-  // $("#intro-header").html("<h4 class='text-success'>All Done!</h4>");
-  // $("#intro-header").append("Your Final Score is: " + timeLeft);
-  // $("#intro-header").append(main-container2);
-
-  // $("#main-container2").classList.remove("noShow");
-  // $("#intro-header").append("<br>");
-  // $("#intro-header").append("<p class='mx-3 text-success d-inline'>Enter Your Initials</p>");
-  // $("#intro-header").append("<input class='ml-3 mt-3 d-inline initial'></input>");
-  // $("#intro-header").append("<button class='px-3 mt-2 btn-primary mx-3 submit-score'>Submit</button>");
-  // $("#result").html(inputName);
-
+    scoreHereText.textContent = "Your Final Score is: " + timeLeft;
 }
 
 function submitScore() {
+    // container1.classList.add("noShow");
+    // container2.classList.add("noShow");
+
+    var container2 = document.getElementById("main-container2");
+    container2.classList.add("noShow");
+
+    var container3 = document.getElementById("main-container3");
+    container3.classList.remove("noShow");
+
   var initial = initialEl.value;
+  initialText.innerHTML = initial + " Your Score Is: " + timeLeft;
   console.log(initial);
+  localStorage.setItem("playerName", initial);
 }
 
-  startButton.addEventListener("click", countdown);
-  submitButton.addEventListener("click", submitScore);
+function backToStart() {
+  var container3 = document.getElementById("main-container3");
+  container3.classList.add("noShow");
+  var container1 = document.getElementById("main-container1");
+  container1.classList.remove("noShow");
+}
 
-
-
-
-
-
-
-
-
-  // "Question 6: Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
-  // "Question 7: How do you insert a comment in a CSS file?",
-  // "Question 8: In HTML, which attribute is used to specify that an input field must be filled out?",
-  // "Question 9: Which CSS property is used to change the text color of an element?",
-  // "Question 10: Which CSS property controls the text size?"
-
-//   // FIFTH QUESTION
-// var fifthQuestion = function() {
-//   $('.answer').remove();
-
-//   questionHere.innerHTML = questions[9];
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='0'>A. font-size </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='1'>B. text-size </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='2'>C. text-style </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='3'>D. font-style </button>");
-
-//   $('.answer').click(function() {
-//     var id = $(this).attr('data-task'); // $(this) refers to button that was clicked
-//     if (id == "0") {
-//       $("#result").html("<h4 class='text-success'>Correct!</h4>");
-//       finalScore = finalScore + 1;
-//     } else {
-//       $("#result").html("<h4 class='text-danger'>Wrong!</h4>")
-//       timeLeft = timeLeft - 10;
-//     }
-//       allDone();
-//   });
-// } 
-
-// // SIXTH QUESTION
-// var sixthQuestion = function() {
-//   $('.answer').remove();
-
-//   questionHere.innerHTML = questions[5];
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='0'>A. src </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='1'>B. longdesc </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='2'>C. alt </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='3'>D. title </button>");
-
-//   $('.answer').click(function() {
-//     var id = $(this).attr('data-task'); // $(this) refers to button that was clicked
-//     if (id == "2") {
-//       $("#result").html("<h4 class='text-success'>Correct!</h4>")
-//       finalScore = finalScore + 1;
-//     } else {
-//       $("#result").html("<h4 class='text-danger'>Wrong!</h4>")
-//               timeLeft = timeLeft - 10;
-//     }
-//       seventhQuestion();
-//   });
-// }  
-
-// // SEVENTH QUESTION
-// var seventhQuestion = function() {
-//   $('.answer').remove();
-
-//   questionHere.innerHTML = questions[6];
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='0'>A. /* this is a comment */ </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='1'>B. ' this is a comment </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='2'>C. // this is a comment // </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='3'>D. // this is a comment </button>");
-
-//   $('.answer').click(function() {
-//     var id = $(this).attr('data-task'); // $(this) refers to button that was clicked
-//     if (id == "0") {
-//       $("#result").html("<h4 class='text-success'>Correct!</h4>")
-//       finalScore = finalScore + 1;
-//     } else {
-//       $("#result").html("<h4 class='text-danger'>Wrong!</h4>")
-//       timeLeft = timeLeft - 10;
-//     }
-//       eightQuestion();
-//   });
-// }  
-
-// // EIGHT QUESTION
-// var eightQuestion = function() {
-//   $('.answer').remove();
-
-//   questionHere.innerHTML = questions[7];
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='0'>A. validate </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='1'>B. required </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='2'>C. placeholder </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='3'>D. formvalidate </button>");
-
-//   $('.answer').click(function() {
-//     var id = $(this).attr('data-task'); // $(this) refers to button that was clicked
-//     if (id == "2") {
-//       $("#result").html("<h4 class='text-success'>Correct!</h4>")
-//       finalScore = finalScore + 1;
-//     } else {
-//       $("#result").html("<h4 class='text-danger'>Wrong!</h4>")
-//       timeLeft = timeLeft - 10;
-//     }
-//       ninethQuestion();
-//   });
-// }  
-
-// // NINETH QUESTION
-// var ninethQuestion = function() {
-//   $('.answer').remove();
-
-//   questionHere.innerHTML = questions[8];
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='0'>A. text-color </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='1'>B. fgcolor </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='2'>C. color </button>");
-//   $(".mainBox").append("<button class='btn-primary d-block px-3 m-2 answer' data-task='3'>D. font-color </button>");
-
-//   $('.answer').click(function() {
-//     var id = $(this).attr('data-task'); // $(this) refers to button that was clicked
-//     if (id == "2") {
-//       $("#result").html("<h4 class='text-success'>Correct!</h4>")
-//       finalScore = finalScore + 1;
-//     } else {
-//       $("#result").html("<h4 class='text-danger'>Wrong!</h4>")
-//       timeLeft = timeLeft - 10;
-//     }
-//       tenthQuestion();
-//   });
-// }  
+startButton.addEventListener("click", countdown);
+submitButton.addEventListener("click", submitScore);
+home.addEventListener("click", countdown);

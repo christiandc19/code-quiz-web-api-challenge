@@ -15,14 +15,13 @@
 <!--NAV HEADER (High Scores and Timer)-->
     <nav class="navbar navbar-darl bg-dark text-light">
         <div class="container" id="questons-container">
-          <a class="navbar-brand" id="high-scores" href="#">View High Scores</a>       
+          <h4 class="navbar-brand" id="high-scores" href="#">WELCOME!</h4>       
           <p class="navbar-brand">Timer: <span id="timer">60</span></p>
         </div>
       </nav>
 
 
 <!--INTRO-->
-
 <section id="main-container1">
   <div class="container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
     <div class="mainBox mb-5">
@@ -39,34 +38,22 @@
   </div>
 </section>
 
+<!-- INPUT FORM -->
 <section class="noShow" id="main-container2">
   <div class="container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
     <p class="m-3 d-inline">Type your initials</p>
-    <input class="m-3 ml-3 mt-3 d-inline initial" id ="initials"></input>
+    <input class="m-3 ml-3 mt-3 d-inline initial" id="initials">
     <button class="m-3 px-3 mt-2 btn-primary mx-3 submit-score" id="submit-score-btn">Submit</button>
   </div>
 </section>
 
+<!-- DISPLAY HIGH SCORE -->
 <section class="noShow" id="main-container3">
   <div class="container w-75 vh-50 text-sm-center border border-success mt-5 rounded">
-    <input class="ml-3 mt-3 d-inline initial" id ="display-initials"></input>
-    <button class="px-3 mt-2 m-3 btn-primary mx-3 submit-score" id="go-back-btn">Go Back</button>
-    <button class="px-3 mt-2 m-3 btn-primary mx-3 submit-score" id="clear-score-btn">Clear High Scores</button>
+    <p class="mx-auto text-sm-center border border-primary w-50 m-5 d-block initial" id ="display-initials"></p>
+    <button type="button" onclick="window.location.reload();" class="px-3 mt-2 m-3 btn-primary mx-3 submit-score" id="go-back-btn">HOME</button>
   </div>
 </section>
-
-
-<!-- QUESTIONS
-      <div class="container w-50 vh-50 text-sm-center border border-dark mt-5 rounded">
-        <div class="mb-5">
-          <h5 class="m-5">What does CSS stand for?</h5>
-          <button class="btn btn-primary m-2 d-block"><b class="text-dark">A</b> Computer Style Sheets</button>
-          <button class="btn btn-primary m-2 d-block"><b class="text-dark">B</b> Creative Style Sheets</button>
-          <button class="btn btn-primary m-2 d-block"><b class="text-dark">C</b> Cascading Style Sheets</button>
-          <button class="btn btn-primary m-2 d-block"><b class="text-dark">D</b> Colorful Style Sheets</button>
-        </div>
-      </div> -->
-
 
 
       <script src="assets/js/main.js"></script>
