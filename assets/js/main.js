@@ -170,7 +170,6 @@ function submitScore() {
 
   var initial = initialEl.value;
   initialText.innerHTML = initial + " Your Score Is: " + timeLeft;
-  console.log(initial);
   localStorage.setItem("playerName", initial);
 }
 
@@ -184,3 +183,6 @@ function backToStart() {
 startButton.addEventListener("click", countdown);
 submitButton.addEventListener("click", submitScore);
 home.addEventListener("click", countdown);
+
+var initialText = document.getElementById("display-initials"); //text
+var elementText = x.innerText || x.textContent

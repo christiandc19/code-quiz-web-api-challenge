@@ -1,7 +1,7 @@
 # code-quiz-web-api-challenge
 
 ### Challeng Mockup
-![Challenge Mockup] ("images/coding-quiz-mockup.png")
+![ Project Mockup ](/assets/project-mockup.png)
 
 ## Built with 
 * HMTL
@@ -9,4 +9,5 @@
 * JAVASCRIPT
 * BOOTSTRAP
 
-##
+## Website
+https://christiandc19.github.io/code-quiz-web-api-challenge/
